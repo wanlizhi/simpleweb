@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  .container
+    .row
+        .col-xs-3
+            ul(class=['nav','nav-pills','nav-stacked'])
+                li.active
+                    a(href="javascript:void(0)") Bing
+                    
+        .col-xs-9
+            ul.media-list(style={overflow:'auto',height:'500px'})
+                li.media
+                    .media-left
+                        a(href="javascript:void(0)")
+                            img.media-object(src="/images/demo.jpg")
+                    .media-body
+                        h4.media-heading bcai
+                        p ok
+            form&attributes({'role': 'form', 'method':'post','onsubmit':'return postmessage()'})
+                .input-group
+                    span.input-group-addon @
+                    input#msgInput.form-control&attributes({'type':'text',placeholder:'twitterhandle'})
